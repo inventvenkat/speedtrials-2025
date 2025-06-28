@@ -3,3 +3,6 @@ uvicorn
 psycopg2-binary
 SQLAlchemy
 GeoAlchemy2
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart

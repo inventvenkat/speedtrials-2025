@@ -12,6 +12,16 @@ DROP TABLE IF EXISTS sdwa_lcr_samples CASCADE;
 DROP TABLE IF EXISTS sdwa_geographic_areas CASCADE;
 DROP TABLE IF EXISTS sdwa_facilities CASCADE;
 DROP TABLE IF EXISTS sdwa_events_milestones CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+
+-- Table for Users
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    hashed_password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) NOT NULL CHECK (role IN ('Operator', 'Regulator')),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
 
 -- Table for Public Water Systems
 CREATE TABLE sdwa_pub_water_systems (
