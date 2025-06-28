@@ -1,0 +1,22 @@
+services:
+  db:
+    image: postgis/postgis:15-3.4
+    container_name: water-data-db
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=water_data
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  api:
+    build: .
+    container_name: water-data-api
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
