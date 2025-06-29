@@ -1,6 +1,6 @@
 import type { WaterSystem } from '../types/WaterSystem';
 
-const API_BASE_URL = 'https://b04f-108-91-116-214.ngrok-free.app';
+const API_BASE_URL = 'https://1645-108-91-116-214.ngrok-free.app';
 
 const apiFetch = async (url: string, options: RequestInit = {}) => {
   const headers = {
