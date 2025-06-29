@@ -20,4 +20,4 @@ EXPOSE 80
 ENV NAME World
 
 # Run the main script when the container launches
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80", "--reload"]
